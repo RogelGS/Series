@@ -1,0 +1,40 @@
+<br>
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h2>Editar Series</h2>
+        </div>
+        <div class="card-body">
+            <form action="">   
+                <div class="form-group">
+                    <label for="">Nombre</label>
+                    <input type="text" class="form-control" name="nombre" [(ngModel)]="s.nombre">
+                </div>
+                <div class="form-group">
+                    <label for="">Genero</label>
+                    <select name="selectGenero" class="form-control" [(ngModel)]="selectGenero">
+                        <option value="0">Seleccione un Genero</option>
+                        <option *ngFor="let genero of generos" [value]="genero.id">{{genero.nombre}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="">Capitulos</label>
+                    <input type="number" class="form-control" name="capitulos" [(ngModel)]="s.capitulos">
+                </div>
+                <div class="form-group">
+                    <label for="">Temporadas</label>
+                    <input type="number" class="form-control" name="temporadas" [(ngModel)]="s.temporadas">
+                </div>
+                <div class="form-group">
+                    <label for="">Pais</label>
+                    <select name="selectPais" class="form-control" [(ngModel)]="selectPais">
+                        <option value="0">Seleccione un Pais</option>
+                        <option *ngFor="let pais of paises" [value]="pais.id">{{pais.nombre}}</option>
+                    </select>
+                </div>
+                <br>
+                <button class="btn btn-warning" (click)="editar()">Editar</button>
+            </form>
+        </div>
+    </div>
+</div>

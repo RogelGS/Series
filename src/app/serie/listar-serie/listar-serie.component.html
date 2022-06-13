@@ -1,0 +1,46 @@
+<br>
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <div class="row">
+                <div class="col">
+                    <h2>Listar Series</h2>
+                </div>
+                <div class="col form-group">
+                    <input type="text" class="form-control"  placeholder="Buscar" [(ngModel)]="search" (keyup)="buscar()">
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nombre</th>
+                        <th>Genero</th>
+                        <th>Capitulos</th>
+                        <th>Temporadas</th>
+                        <th>Pais</th>
+                        <th>Editar</th>
+                        <th>Eliminar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let s of serie">
+                        <td>{{s.id}}</td>
+                        <td>{{s.nombre}}</td>
+                        <td>{{s.genero.nombre}}</td>
+                        <td>{{s.capitulos}}</td>
+                        <td>{{s.temporadas}}</td>
+                        <td>{{s.pais.nombre}}</td>
+                        <td><button class="btn btn-warning" (click)="editar(s)">Editar</button></td>
+                        <td><button class="btn btn-danger" (click)="eliminar(s)">Eliminar</button></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="col">
+                <!-- <p>Hay en total: <b>{{count}}</b> {{count == 1 ? "registro" : "registros"}}</p> -->
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,40 @@
+<br>
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <div class="row">
+                <div class="col">
+                    <h2>Listar Generos</h2>
+                </div>
+                <div class="col form-group">
+                    <input type="text" class="form-control"  placeholder="Buscar" [(ngModel)]="search" (keyup)="buscar()">
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nombre</th>
+                        <th>Continente</th>
+                        <th>Editar</th>
+                        <th>Eliminar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let p of pais">
+                        <td>{{p.id}}</td>
+                        <td>{{p.nombre}}</td>
+                        <td>{{paises[p.continente-1]}}</td>
+                        <td><button class="btn btn-warning" (click)="editar(p)">Editar</button></td>
+                        <td><button class="btn btn-danger" (click)="eliminar(p)">Eliminar</button></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="col">
+                <!-- <p>Hay en total: <b>{{count}}</b> {{count == 1 ? "registro" : "registros"}}</p> -->
+            </div>
+        </div>
+    </div>
+</div>
